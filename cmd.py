@@ -6,8 +6,10 @@ adminlocked = True
 dat_users = open("data/users.dat", "a+")
 users = []
 for user in dat_users:
-	userparts = user.split(",")
-	users.append((userparts[0], userparts[1], int(userparts[2])))
+	if user[0] != "#":
+		userparts = user.split(",")
+		users.append((userparts[0], userparts[1], int(userparts[2])))
+	
     
 currdir = ["#"]
 
@@ -37,6 +39,7 @@ def recursive():
     elif cmd[0] == "HELP":
         print """---Commands---
 Format: COMMAND <mandatory_arg> [optional_arg] | COMMAND fixed_text [one_or_more_args]* - Description. Aliases: CMD
+ABOUT - Alias for INFO
 CD - Alias for CDIR
 CDIR <dir> - Changes working directory to the called directory. If the called directory does not exist, creates it. Aliases: CD
 CFG - Alias for CONFIG
@@ -45,6 +48,7 @@ D - Alias for DIR
 DIR - Lists the current directory. Aliases: D
 EXIT - Quits NRAOS. Aliases: QUIT
 HELP [cmd] - Displays help docs. If called with a command, displays detailed command docs for that command.
+INFO - Displays info docs. Aliases: ABOUT
 LGI - Alias for LOGIN
 LGO - Alias for LOGOUT
 LOGIN <user> <pass> - Log in to the system. Aliases: LGI
@@ -64,9 +68,14 @@ QUIT - Alias for EXIT
             currdir.pop()
         else:
             currdir.append(cmd[1])
+	elif cmd[0] == "ABOUT" or cmd[0] == "INFO":
+		print "Developed 2012-2013 by Ethan Guo and Zachary Trefler."
+		print "COPYLEFT Ethan Guo, 2013. All wrongs reserved."
+		print "Feel free to view or edit source code. Submit changes or improvements to https://github.com/ethg242/nraos" 
     else:
         print "Error: Command not recognized."
     recursive()
 
 print "NRaOS (NotReallyanOS) - v0.1"
+print "For more information, type \"INFO\"."
 recursive()

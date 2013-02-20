@@ -1,8 +1,12 @@
 NRaOS (NotReallyanOS) - v0.1
+For more information, type "INFO".
 
-type "HELP" for more info.
-
+Developed 2012-2013 by Ethan Guo and Zachary Trefler.
+COPYLEFT Ethan Guo, 2013. All wrongs reserved.
+Feel free to view or edit source code. Submit changes or improvements to https://github.com/ethg242/nraos 
 
 --CHANGELOG--
 
-v0.1 - First beta version.
+v0.1.1 : Added more documentation and other non-machine-readable stuff.
+	+ command added: INFO - displays info docs. Aliases: ABOUT.
+v0.1 : First beta version.

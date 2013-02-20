@@ -1,2 +1,9 @@
-Admin,12345,1
-Default,1234,0
+# Users login data.
+# As of v0.1, this file is NOT encrypted.
+# As of v0.1, the only way to add a new user is to directly modify this file.
+# To add a new user, write a new entry at the end of the file on a new line. This is case- and whitespace-sensitive.
+# Entry format: <username>,<password>,<permission>
+# permission is a 1 digit integer: 0 is a default user, 1 has administrative powers.
+
+admin,12345,1
+user,1234,0
