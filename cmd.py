@@ -36,11 +36,11 @@ def recursive():
             locked, adminlocked = True, True
     elif cmd[0] == "HELP":
         print """---Commands---
-Format: COMMAND <mandatory_arg> [optional_arg] | COMMAND text [one_or_more_args]* - Description. Aliases: CMD
+Format: COMMAND <mandatory_arg> [optional_arg] | COMMAND fixed_text [one_or_more_args]* - Description. Aliases: CMD
 CD - Alias for CDIR
 CDIR <dir> - Changes working directory to the called directory. If the called directory does not exist, creates it. Aliases: CD
 CFG - Alias for CONFIG
-CONFIG <value> [node]* - 
+CONFIG <value> [node]* - In progress.
 D - Alias for DIR
 DIR - Lists the current directory. Aliases: D
 EXIT - Quits NRAOS. Aliases: QUIT
@@ -68,5 +68,5 @@ QUIT - Alias for EXIT
         print "Error: Command not recognized."
     recursive()
 
-print "NotReallyAn OS 0.1"
+print "NRaOS (NotReallyanOS) - v0.1"
 recursive()
